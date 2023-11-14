@@ -1,2 +1,4 @@
-package com.example.teammatcha.Services;public class CommandeService {
+package com.example.teammatcha.Services;
+
+public class CommandeService {
 }

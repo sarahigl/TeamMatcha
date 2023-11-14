@@ -1,2 +1,5 @@
-package com.example.teammatcha;public class MyRestcontroller {
+package com.example.teammatcha;
+
+public class MyRestcontroller {
+
 }

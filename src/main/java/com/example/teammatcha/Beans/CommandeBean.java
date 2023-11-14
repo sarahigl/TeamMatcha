@@ -1,2 +1,4 @@
-package com.example.teammatcha.Beans;public class CommandeBean {
+package com.example.teammatcha.Beans;
+
+public class CommandeBean {
 }

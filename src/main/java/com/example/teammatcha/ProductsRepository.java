@@ -1,4 +1,4 @@
 package com.example.teammatcha;
 
-public class ProductRepository {
+public class ProductsRepository {
 }

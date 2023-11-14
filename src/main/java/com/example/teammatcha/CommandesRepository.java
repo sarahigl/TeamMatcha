@@ -1,4 +1,4 @@
 package com.example.teammatcha;
 
-public class CommandeRepository {
+public class CommandesRepository {
 }

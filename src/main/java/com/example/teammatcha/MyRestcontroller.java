@@ -1,17 +1,18 @@
 package com.example.teammatcha;
 
 import com.example.teammatcha.Beans.ProductBean;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Controller
 public class MyRestcontroller {
-    private List<ProductBean> listProduits = new ArrayList<>();
-
-    //public static List<ProductBean> getProduct(){}
-
-    //public String postCommand(String json){}
-    //public static ProductBean postUpdateProduct(ProductBean productBean){}
-    //public void DeleteProduct(String url){}
-
+    //http://localhost:8080/hello
+    @GetMapping("/hello")
+    public String testHello(){
+        System.out.println("/hello");
+        return "welcome";
+    }
 }

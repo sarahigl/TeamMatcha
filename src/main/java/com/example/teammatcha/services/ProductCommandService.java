@@ -21,11 +21,14 @@ public class ProductCommandService {
     public List<ProductBean> getAllProduct() {
         return productRep.findAll();
     }
-    public ProductBean addProduct(ProductBean product) {
+    public ProductBean addProduct(ProductBean product) throws Exception {
+        if (productRep.existsByNomProduit(product.getNomProduit())) {
+            throw new Exception("Le produit existe déjà");
+        }
         return productRep.save(product);
     }
-//    public boolean isProductExists(String productName) {
-//        return productRep.existsByNom_produit(productName);
-//    }
+    public boolean isProductExists(String nomProduit) {
+        return productRep.existsByNomProduit(nomProduit);
+    }
 
 }

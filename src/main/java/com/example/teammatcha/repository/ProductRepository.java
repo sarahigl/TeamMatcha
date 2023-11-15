@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductBean, Integer> {
-//    boolean existsByNom_produit(String productName);
+    boolean existsByNomProduit(String nomProduit);
 }
 

@@ -1,13 +1,12 @@
 package com.example.teammatcha.beans;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "commandes")
 public class CommandBean {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_commande;
     private String telephone_commande;
     private String nom_commande;

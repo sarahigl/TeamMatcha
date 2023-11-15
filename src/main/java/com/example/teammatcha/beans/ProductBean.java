@@ -6,15 +6,17 @@ import jakarta.persistence.*;
 @Table(name = "produits")
 public class ProductBean {
    @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id_produit;
    private double prix_produit;
-   private String nom_produit;
+//   @Column(name = "nom_produit")
+   private String nomProduit;
    private String image_produit;
 
-    public ProductBean(int id_produit, double prix_produit, String nom_produit, String image_produit) {
+    public ProductBean(int id_produit, double prix_produit, String nomProduit, String image_produit) {
         this.id_produit = id_produit;
         this.prix_produit = prix_produit;
-        this.nom_produit = nom_produit;
+        this.nomProduit = nomProduit;
         this.image_produit = image_produit;
     }
 
@@ -37,12 +39,12 @@ public class ProductBean {
         this.prix_produit = prix_produit;
     }
 
-    public String getNom_produit() {
-        return nom_produit;
+    public String getNomProduit() {
+        return nomProduit;
     }
 
-    public void setNom_produit(String nom_produit) {
-        this.nom_produit = nom_produit;
+    public void setNomProduit(String nomProduit) {
+        this.nomProduit = nomProduit;
     }
 
     public String getImage_produit() {

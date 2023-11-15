@@ -29,13 +29,13 @@ public class MyController {
         return "products";
     }
     @PostMapping("/addProduct")
-    public String addProduct(@ModelAttribute  ProductBean product, Model model) {
+    public String addProduct(@ModelAttribute  ProductBean product) {
         //http://localhost:8080/addProduct
-//        if (commandService.isProductExists(product.getNom_produit())) {
-//            model.addAttribute("productExistsError", "Un produit avec ce nom existe déjà.");
-//            return "redirect:/products";
-//        }
-        commandService.addProduct(product);
+        try {
+            commandService.addProduct(product);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return "redirect:/products";
     }
 }

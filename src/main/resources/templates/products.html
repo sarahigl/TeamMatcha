@@ -11,11 +11,10 @@
         <a href="products">Produits</a>
     </header>
 
-<!--    <p th:if="${productExistsError}" th:text="${productExistsError}"></p>-->
     <fieldset>
         <legend>Ajouter un produit</legend>
         <form th:action="@{/addProduct}" th:object="${product}" method="post">
-            <input type="text" th:field="*{nom_produit}" placeholder="Nom du produit" required>
+            <input type="text" th:field="*{nomProduit}" placeholder="Nom du produit" required>
             <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" required>
             <input type="text" th:field="*{image_produit}" placeholder="Image du produit">
             <input type="submit" value="Ajouter">
@@ -25,7 +24,7 @@
     <ul>
         <li th:each="product : ${products}">
             <p th:text="${product.getId_produit()}"></p>
-            <p th:text="${product.getNom_produit()}"></p>
+            <p th:text="${product.getNomProduit()}"></p>
             <p th:text="${product.getPrix_produit() + '€'}"></p>
             <p th:text="${product.getImage_produit()}"></p>
             <button>Valider</button>

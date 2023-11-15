@@ -27,8 +27,8 @@ public class ProductCommandService {
         }
         return productRep.save(product);
     }
-    public boolean isProductExists(String nomProduit) {
-        return productRep.existsByNomProduit(nomProduit);
+    public void deleteProductById(int productId) {
+        productRep.deleteById(productId);
     }
 
 }

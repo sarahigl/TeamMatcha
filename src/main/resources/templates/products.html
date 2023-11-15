@@ -27,8 +27,8 @@
             <p th:text="${product.getNomProduit()}"></p>
             <p th:text="${product.getPrix_produit() + '€'}"></p>
             <p th:text="${product.getImage_produit()}"></p>
-            <button>Valider</button>
-            <button>Supprimer</button>
+            <a>Valider</a>
+            <a th:href="@{'/deleteProduct/' + ${product.getId_produit()}}">Supprimer</a>
         </li>
     </ul>
 

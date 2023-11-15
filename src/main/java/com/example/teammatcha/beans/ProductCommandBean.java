@@ -1,6 +1,13 @@
 package com.example.teammatcha.beans;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "produits_commandes")
 public class ProductCommandBean {
+    @Id
     private int id_produit_command;
     private int id_produit;
     private int id_commande;

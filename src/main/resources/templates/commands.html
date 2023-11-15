@@ -9,6 +9,11 @@
         <a href="#">Commandes</a>
         <a href="#">Produits</a>
     </header>
+    <ol>
+        <li th:each="command : ${commands}">
+            <span th:text="${command.getNom_commande()}"></span>
+        </li>
+    </ol>
 
 
 

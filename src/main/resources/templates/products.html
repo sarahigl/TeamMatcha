@@ -8,17 +8,18 @@
 <body>
 
     <header>
-        <a href="commands">Commandes</a>
-        <a href="products">Produits</a>
+        <h1 class="fruitshop">FruitShop</h1>
+        <a href="commands" class="navigation">Commandes</a>
+        <a href="products" class="navigation">Produits</a>
     </header>
 
     <fieldset>
-        <legend>Ajouter un produit</legend>
+        <legend>Ajouter un nouveau produit</legend>
         <form th:action="@{/addProduct}" th:object="${product}" method="post">
-            <input type="text" th:field="*{nomProduit}" placeholder="Nom du produit" required>
-            <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" required>
-            <input type="text" th:field="*{image_produit}" placeholder="Image du produit">
-            <input type="submit" value="Ajouter">
+            <input type="text" th:field="*{nomProduit}" placeholder="Nom du produit" class="inputNewProduit" required>
+            <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" class="inputNewProduit" required>
+            <input type="text" th:field="*{image_produit}" placeholder="Image du produit" class="inputNewProduit">
+            <input type="submit" value="Ajouter" id="btnAjouter">
         </form>
     </fieldset>
 

@@ -1,3 +1,59 @@
-html{
-    background: aquamarine;
+header {
+    background: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-bottom: 150px;
+}
+
+.navigation {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    align-content: center;
+}
+fieldset{
+    border: none;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+legend{
+    background-color: #888888;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 600px;
+}
+form{
+    background: #F6F6F6;
+    width: 50%;
+    height: 100%;
+    padding: 100px;
+}
+.inputNewProduit {
+    margin-bottom: 10px;
+    border: none;
+    background-color: #D9D9D9;
+    width: 680px;
+    height: 30px;
+}
+#btnAjouter{
+    background-color: #888888;
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: none;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 30px;
+}
+li{
+    display: flex;
+    background-color: #888888;
+}
+p{
+    padding: 10px;
 }

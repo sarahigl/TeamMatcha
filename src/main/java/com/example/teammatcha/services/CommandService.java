@@ -9,10 +9,6 @@ import java.util.List;
 
 @Service
 public class CommandService {
-    @Autowired
-    private CommandRepository commandRep;
-    public List<CommandBean> getAll() {
-        return commandRep.findAll();
-    }
+
 
 }

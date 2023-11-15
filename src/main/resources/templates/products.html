@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="producstStyle.css">
     <title>Produits</title>
 </head>
 <body>
+<header>
+    <h1>Fruits Shop</h1>
+    <nav>
+        <a href="#">Commandes</a>
+        <a href="#">Produits</a>
+    </nav>
+</header>
 
+<main>
+    <section class="ajout-produit">
+        <h2>Ajouter un nouveau produit</h2>
+        <form action="#">
+            <input type="text" name="nom" placeholder="Nom du produit">
+            <input type="number" name="prix" placeholder="Prix du produit">
+            <input type="file" name="image" placeholder="Image du produit">
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <section class="produits">
+        <h2>Produits</h2>
+        <ul>
+            <li>
+                <span class="produit">Produit</span>
+                <span class="prix">Prix</span>
+                <span class="image">Image</span>
+                <button class="valider">Valider</button>
+                <button class="supprimer">Supprimer</button>
+            </li>
+            <li>
+                <span class="produit">Produit..</span>
+                <span class="prix">Prix.</span>
+                <span class="image">Image..</span>
+                <button class="valider">Valider</button>
+                <button class="supprimer">Supprimer</button>
+            </li>
+            <li>
+                <span class="produit">Produit...</span>
+                <span class="prix">Prix...</span>
+                <span class="image">Image...</span>
+                <button class="valider">Valider</button>
+                <button class="supprimer">Supprimer</button>
+            </li>
+            <li>
+                <span class="produit">Produit..</span>
+                <span class="prix">Prix</span>
+                <span class="image">image.</span>
+                <button class="valider">Valider</button>
+                <button class="supprimer">Supprimer</button>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Copyright@ TEAM MATCHA</p>
+</footer>
 </body>
 </html>

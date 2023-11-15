@@ -12,6 +12,7 @@ public class ProductCommandBean {
     private int id_commande;
     private int quantite;
 
+
     public ProductCommandBean(int id_produit, int id_commande, int quantite) {
         this.id_produit = id_produit;
         this.id_commande = id_commande;

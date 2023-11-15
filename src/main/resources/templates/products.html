@@ -2,66 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="producstStyle.css">
     <title>Produits</title>
 </head>
 <body>
-<header>
-    <h1>Fruits Shop</h1>
-    <nav>
-        <a href="#">Commandes</a>
-        <a href="#">Produits</a>
-    </nav>
-</header>
 
-<main>
-    <section class="ajout-produit">
-        <h2>Ajouter un nouveau produit</h2>
-        <form action="#">
-            <input type="text" name="nom" placeholder="Nom du produit">
-            <input type="number" name="prix" placeholder="Prix du produit">
-            <input type="file" name="image" placeholder="Image du produit">
-            <button type="submit">Envoyer</button>
+    <header>
+        <a href="commands">Commandes</a>
+        <a href="products">Produits</a>
+    </header>
+
+<!--    <p th:if="${productExistsError}" th:text="${productExistsError}"></p>-->
+    <fieldset>
+        <legend>Ajouter un produit</legend>
+        <form th:action="@{/addProduct}" th:object="${product}" method="post">
+            <input type="text" th:field="*{nom_produit}" placeholder="Nom du produit" required>
+            <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" required>
+            <input type="text" th:field="*{image_produit}" placeholder="Image du produit">
+            <input type="submit" value="Ajouter">
         </form>
-    </section>
+    </fieldset>
 
-    <section class="produits">
-        <h2>Produits</h2>
-        <ul>
-            <li>
-                <span class="produit">Produit</span>
-                <span class="prix">Prix</span>
-                <span class="image">Image</span>
-                <button class="valider">Valider</button>
-                <button class="supprimer">Supprimer</button>
-            </li>
-            <li>
-                <span class="produit">Produit..</span>
-                <span class="prix">Prix.</span>
-                <span class="image">Image..</span>
-                <button class="valider">Valider</button>
-                <button class="supprimer">Supprimer</button>
-            </li>
-            <li>
-                <span class="produit">Produit...</span>
-                <span class="prix">Prix...</span>
-                <span class="image">Image...</span>
-                <button class="valider">Valider</button>
-                <button class="supprimer">Supprimer</button>
-            </li>
-            <li>
-                <span class="produit">Produit..</span>
-                <span class="prix">Prix</span>
-                <span class="image">image.</span>
-                <button class="valider">Valider</button>
-                <button class="supprimer">Supprimer</button>
-            </li>
-        </ul>
-    </section>
-</main>
+    <ul>
+        <li th:each="product : ${products}">
+            <p th:text="${product.getId_produit()}"></p>
+            <p th:text="${product.getNom_produit()}"></p>
+            <p th:text="${product.getPrix_produit() + '€'}"></p>
+            <p th:text="${product.getImage_produit()}"></p>
+            <button>Valider</button>
+            <button>Supprimer</button>
+        </li>
+    </ul>
 
-<footer>
-    <p>Copyright@ TEAM MATCHA</p>
-</footer>
 </body>
 </html>
+

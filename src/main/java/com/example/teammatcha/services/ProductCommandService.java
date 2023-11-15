@@ -21,5 +21,11 @@ public class ProductCommandService {
     public List<ProductBean> getAllProduct() {
         return productRep.findAll();
     }
+    public ProductBean addProduct(ProductBean product) {
+        return productRep.save(product);
+    }
+//    public boolean isProductExists(String productName) {
+//        return productRep.existsByNom_produit(productName);
+//    }
 
 }

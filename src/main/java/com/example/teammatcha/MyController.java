@@ -11,4 +11,14 @@ public class MyController {
         System.out.println("/hello");
         return "welcome";
     }
+    @GetMapping("/commands")
+    public String showCommands(){
+        System.out.println("/commands");
+        return "commands";
+    }
+    @GetMapping("/pruducts")
+    public String showPruducts(){
+        System.out.println("/pruducts");
+        return "pruducts";
+    }
 }

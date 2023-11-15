@@ -1,17 +1,18 @@
 package com.example.teammatcha.beans;
 
-public class CommanderBean {
+public class ProductCommandBean {
+    private int id_produit_command;
     private int id_produit;
     private int id_commande;
     private int quantite;
 
-    public CommanderBean(int id_produit, int id_commande, int quantite) {
+    public ProductCommandBean(int id_produit, int id_commande, int quantite) {
         this.id_produit = id_produit;
         this.id_commande = id_commande;
         this.quantite = quantite;
     }
 
-    public CommanderBean() {
+    public ProductCommandBean() {
     }
 
     public int getId_produit() {

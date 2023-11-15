@@ -11,7 +11,8 @@ public class ProductBean {
    private String nom_produit;
    private String image_produit;
 
-    public ProductBean(double prix_produit, String nom_produit, String image_produit) {
+    public ProductBean(int id_produit, double prix_produit, String nom_produit, String image_produit) {
+        this.id_produit = id_produit;
         this.prix_produit = prix_produit;
         this.nom_produit = nom_produit;
         this.image_produit = image_produit;

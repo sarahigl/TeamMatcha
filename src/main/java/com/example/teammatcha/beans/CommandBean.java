@@ -15,7 +15,8 @@ public class CommandBean {
     private double prix_total_commande;
     private long date_commande;
 
-    public CommandBean(String telephone_commande, String nom_commande, String prenom_commande, double prix_total_commande, long date_commande) {
+    public CommandBean(int id_commande, String telephone_commande, String nom_commande, String prenom_commande, double prix_total_commande, long date_commande) {
+        this.id_commande = id_commande;
         this.telephone_commande = telephone_commande;
         this.nom_commande = nom_commande;
         this.prenom_commande = prenom_commande;

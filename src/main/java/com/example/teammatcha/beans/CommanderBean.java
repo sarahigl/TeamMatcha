@@ -5,7 +5,8 @@ public class CommanderBean {
     private int id_commande;
     private int quantite;
 
-    public CommanderBean(int id_commande, int quantite) {
+    public CommanderBean(int id_produit, int id_commande, int quantite) {
+        this.id_produit = id_produit;
         this.id_commande = id_commande;
         this.quantite = quantite;
     }

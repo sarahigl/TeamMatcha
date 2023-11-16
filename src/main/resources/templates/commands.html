@@ -9,19 +9,29 @@
         <a href="commands">Commandes</a>
         <a href="products">Produits</a>
     </header>
+<!--    <ul>-->
+<!--        <li th:each="command : ${commands}">-->
+<!--            <p th:text="${command.getId_commande()}"></p>-->
+<!--            <p th:text="${command.getNom_commande()}"></p>-->
+<!--            <p th:text="${command.getPrenom_commande()}"></p>-->
+<!--            <p th:text="${command.getTelephone_commande()}"></p>-->
+<!--            <p th:text="${command.getPrix_total_commande()}"></p>-->
+<!--            <p th:text="${command.getDate_commande()}"></p>-->
+<!--            <ul>-->
+
+<!--            </ul>-->
+<!--        </li>-->
+<!--    </ul>-->
     <ul>
         <li th:each="command : ${commands}">
-            <p th:text="${command.getId_commande()}"></p>
-            <p th:text="${command.getNom_commande()}"></p>
-            <p th:text="${command.getPrenom_commande()}"></p>
-            <p th:text="${command.getTelephone_commande()}"></p>
-            <p th:text="${command.getPrix_total_commande()}"></p>
-            <p th:text="${command.getDate_commande()}"></p>
-            <ul>
-                <li>
-
-                </li>
-            </ul>
+            <p th:text="${command.getCommand().getId_commande()}"></p>
+            <p th:text="${command.command.getDate_commande()}"></p>
+            <p th:text="${command.command.getNom_commande()}"></p>
+            <p th:text="${command.command.getPrenom_commande()}"></p>
+            <p th:text="${command.command.getTelephone_commande()}"></p>
+            <p th:text="${command.command.getPrix_total_commande()}"></p>
+            <p th:text="${command.product.getNomProduit()}"></p>
+            <p th:text="${command.productCommand.getQuantite()}"></p>
         </li>
     </ul>
 

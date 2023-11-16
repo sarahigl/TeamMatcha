@@ -2,6 +2,8 @@ package com.example.teammatcha.beans;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "commandes")
 public class CommandBean {
@@ -13,7 +15,6 @@ public class CommandBean {
     private String prenom_commande;
     private double prix_total_commande;
     private long date_commande;
-
     public CommandBean(int id_commande, String telephone_commande, String nom_commande, String prenom_commande, double prix_total_commande, long date_commande) {
         this.id_commande = id_commande;
         this.telephone_commande = telephone_commande;

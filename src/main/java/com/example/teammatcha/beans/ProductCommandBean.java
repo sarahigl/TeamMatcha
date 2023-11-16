@@ -8,14 +8,19 @@ public class ProductCommandBean {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_produits_commandes;
-    private int id_produit;
-    private int id_commande;
+    @ManyToOne
+    @JoinColumn(name = "id_produit", nullable = false)
+    private ProductBean produit;
+
+    @ManyToOne
+    @JoinColumn(name = "id_commande", nullable = false)
+    private CommandBean commande;
     private int quantite;
 
-    public ProductCommandBean(int id_produit_command, int id_produit, int id_commande, int quantite) {
-        this.id_produits_commandes = id_produit_command;
-        this.id_produit = id_produit;
-        this.id_commande = id_commande;
+    public ProductCommandBean(int id_produits_commandes, ProductBean produit, CommandBean commande, int quantite) {
+        this.id_produits_commandes = id_produits_commandes;
+        this.produit = produit;
+        this.commande = commande;
         this.quantite = quantite;
     }
 
@@ -26,24 +31,24 @@ public class ProductCommandBean {
         return id_produits_commandes;
     }
 
-    public void setId_produits_commandes(int id_produit_command) {
-        this.id_produits_commandes = id_produit_command;
+    public void setId_produits_commandes(int id_produits_commandes) {
+        this.id_produits_commandes = id_produits_commandes;
     }
 
-    public int getId_produit() {
-        return id_produit;
+    public ProductBean getProduit() {
+        return produit;
     }
 
-    public void setId_produit(int id_produit) {
-        this.id_produit = id_produit;
+    public void setProduit(ProductBean produit) {
+        this.produit = produit;
     }
 
-    public int getId_commande() {
-        return id_commande;
+    public CommandBean getCommande() {
+        return commande;
     }
 
-    public void setId_commande(int id_commande) {
-        this.id_commande = id_commande;
+    public void setCommande(CommandBean commande) {
+        this.commande = commande;
     }
 
     public int getQuantite() {

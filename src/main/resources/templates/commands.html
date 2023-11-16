@@ -18,8 +18,12 @@
             <p th:text="${command.command.getPrenom_commande()}"></p>
             <p th:text="${command.command.getTelephone_commande()}"></p>
             <p th:text="${command.command.getPrix_total_commande()}"></p>
-            <p th:text="${command.product.getNomProduit()}"></p>
-            <p th:text="${command.productCommand.getQuantite()}"></p>
+            <ul>
+                <li th:each="productCommand : ${command.getProductList()}">
+                    <p th:text="${productCommand.getNomProduit()}"></p>
+                    <p th:text="${productCommand.getPrix_produit()}"></p>
+                </li>
+            </ul>
         </li>
     </ul>
 

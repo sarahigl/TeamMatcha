@@ -7,6 +7,7 @@ import com.example.teammatcha.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.*;
 
 @Service
@@ -40,6 +41,9 @@ public class ProductCommandService {
         return productCommandRep.getAllMergedData();
     }
     public void addCommand(CommandBean command) {
+        Instant now = Instant.now();
+        long timestamp = now.toEpochMilli();
+        command.setDate_commande(timestamp);
         commandRep.save(command);
     }
 

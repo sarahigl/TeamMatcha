@@ -1,11 +1,16 @@
 package com.example.teammatcha;
 
+import com.example.teammatcha.beans.CommandBean;
 import com.example.teammatcha.beans.ProductBean;
+import com.example.teammatcha.beans.ProductCommandBean;
 import com.example.teammatcha.services.ProductCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class MyController {
@@ -15,7 +20,7 @@ public class MyController {
     @GetMapping("/commands")
     public String showCommands(Model model){
         //http://localhost:8080/commands
-        model.addAttribute("commands", commandService.getAllCommand());
+        model.addAttribute("commands", commandService.getAllMergedData());
         return "commands";
     }
     @GetMapping("/products")

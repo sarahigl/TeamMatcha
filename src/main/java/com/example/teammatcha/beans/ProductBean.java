@@ -9,7 +9,6 @@ public class ProductBean {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id_produit;
    private double prix_produit;
-//   @Column(name = "nom_produit")
    private String nomProduit;
    private String image_produit;
 

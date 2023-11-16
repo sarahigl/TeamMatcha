@@ -29,7 +29,7 @@
 
         <ul>
             <li th:each="product : ${products}">
-                <p th:text="${product.getId_produit()}"></p>
+                <p th:text="${product.getId_produit()}" ></p>
                 <p th:text="${product.getNomProduit()}" class="nomproduit"></p>
                 <p th:text="${product.getPrix_produit() + '€'}"></p>
                 <p th:text="${product.getImage_produit()}"></p>

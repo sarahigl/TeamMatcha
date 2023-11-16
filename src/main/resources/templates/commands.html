@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Commandes</title>
+    <link rel="stylesheet" href="/css/commandes.css" />
 </head>
 <body>
     <header>
-        <a href="commands">Commandes</a>
-        <a href="products">Produits</a>
+        <h1 class="fruitshop">FruitShop</h1>
+        <div class="navigation-container">
+            <a href="commands" class="navigation">Commandes</a>
+            <a href="products" class="navigation">Produits</a>
+        </div>
     </header>
 
     <ul>
+        <h2>COMMANDS CLIENTS</h2>
+        <li>
+            <p>id</p>
+            <p>n°commande</p>
+            <p>nom</p>
+            <p>prénom</p>
+            <p>téléphone</p>
+            <p>prix total</p>
+            <p>produit</p>
+            <p>quantité</p>
+        </li>
         <li th:each="command : ${commands}">
-            <p th:text="${command.getCommand().getId_commande()}"></p>
-            <p th:text="${command.command.getDate_commande()}"></p>
-            <p th:text="${command.command.getNom_commande()}"></p>
-            <p th:text="${command.command.getPrenom_commande()}"></p>
-            <p th:text="${command.command.getTelephone_commande()}"></p>
-            <p th:text="${command.command.getPrix_total_commande()}"></p>
-            <p th:text="${command.product.getNomProduit()}"></p>
-            <p th:text="${command.productCommand.getQuantite()}"></p>
+            <p th:text="${command.getCommand().getId_commande()}" class="listep"></p>
+            <p th:text="${command.command.getDate_commande()}" class="listep"></p>
+            <p th:text="${command.command.getNom_commande()}" class="listep"></p>
+            <p th:text="${command.command.getPrenom_commande()}" class="listep"></p>
+            <p th:text="${command.command.getTelephone_commande()}" class="listep"></p>
+            <p th:text="${command.command.getPrix_total_commande()}" class="listep"></p>
+            <p th:text="${command.product.getNomProduit()}" class="listep"></p>
+            <p th:text="${command.productCommand.getQuantite()}" class="listep"></p>
         </li>
     </ul>
-
-
-
+    <footer>
+        <p>Copyright TEAM MATCHA</p>
+        <p>FRUIT SHOP</p>
+    </footer>
 </body>
 </html>

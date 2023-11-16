@@ -9,31 +9,34 @@
 
     <header>
         <h1 class="fruitshop">FruitShop</h1>
-        <a href="commands" class="navigation">Commandes</a>
-        <a href="products" class="navigation">Produits</a>
+        <div class="navigation-container">
+            <a href="commands.html" class="navigation">Commandes</a>
+            <a href="products.html" class="navigation">Produits</a>
+        </div>
     </header>
 
-    <fieldset>
-        <legend>Ajouter un nouveau produit</legend>
-        <form th:action="@{/addProduct}" th:object="${product}" method="post">
-            <input type="text" th:field="*{nomProduit}" placeholder="Nom du produit" class="inputNewProduit" required>
-            <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" class="inputNewProduit" required>
-            <input type="text" th:field="*{image_produit}" placeholder="Image du produit" class="inputNewProduit">
-            <input type="submit" value="Ajouter" id="btnAjouter">
+    <div class="tout">
+        <div class="fieldset">
+            <legend>Ajouter un nouveau produit</legend>
+            <form th:action="@{/addProduct}" th:object="${product}" method="post">
+                <input type="text" th:field="*{nomProduit}" placeholder="Nom du produit" class="inputNewProduit" required>
+                <input type="text" th:field="*{prix_produit}" placeholder="Prix du produit" class="inputNewProduit" required>
+                <input type="text" th:field="*{image_produit}" placeholder="Image du produit" class="inputNewProduit">
+                <input type="submit" value="Ajouter" id="btnAjouter">
 
-        </form>
-    </fieldset>
+            </form>
+        </div>
 
-    <ul>
-        <li th:each="product : ${products}">
-            <p th:text="${product.getId_produit()}"></p>
-            <p th:text="${product.getNomProduit()}"></p>
-            <p th:text="${product.getPrix_produit() + '€'}"></p>
-            <p th:text="${product.getImage_produit()}"></p>
-            <a th:href="@{'/deleteProduct/' + ${product.getId_produit()}}">Supprimer</a>
-        </li>
-    </ul>
-
+        <ul>
+            <li th:each="product : ${products}">
+                <p th:text="${product.getId_produit()}"></p>
+                <p th:text="${product.getNomProduit()}" class="nomproduit"></p>
+                <p th:text="${product.getPrix_produit() + '€'}"></p>
+                <p th:text="${product.getImage_produit()}"></p>
+                <a th:href="@{'/deleteProduct/' + ${product.getId_produit()}}" class="lien">Supprimer</a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
 

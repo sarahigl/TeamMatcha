@@ -24,16 +24,5 @@ public class MyRestcontroller {
         //http://localhost:8080/addCommand
         commandService.addCommand2(commandProduct);
     }
-    @GetMapping("/test")
-    //http://localhost:8080/api/test
-    public commandProductsListBean test() {
-        commandProductsListBean com = new commandProductsListBean();
-        com.setCommand(new CommandBean("aa", "bb", "cc"));
-        ArrayList<ProductQuantityBean> list = new ArrayList<>();
-        list.add(new ProductQuantityBean(new  ProductBean(1, 22, "cc", "dd"), 5));
-        list.add(new ProductQuantityBean(new  ProductBean(2, 11, "aa", "ccc"), 2));
 
-        com.setProductList(list);
-        return com;
-    }
 }

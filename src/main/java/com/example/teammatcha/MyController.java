@@ -20,6 +20,7 @@ public class MyController {
     @GetMapping("/commands")
     public String showCommands(Model model){
         //http://localhost:8080/commands
+
         model.addAttribute("commands", commandService.getAllMergedData());
         return "commands";
     }

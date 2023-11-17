@@ -79,7 +79,7 @@ public class ProductCommandService {
 
             mergedData.add(new commandProductsListBean(command, productsList));
         }
-
+        Collections.reverse(mergedData);
         return mergedData;
     }
 }

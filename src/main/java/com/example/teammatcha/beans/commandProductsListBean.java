@@ -4,9 +4,9 @@ import java.util.List;
 
 public class commandProductsListBean {
     private CommandBean command;
-    private List<ProductBean> productList;
+    private List<ProductQuantityBean> productList;
 
-    public commandProductsListBean(CommandBean command, List<ProductBean> productList) {
+    public commandProductsListBean(CommandBean command, List<ProductQuantityBean> productList) {
         this.command = command;
         this.productList = productList;
     }
@@ -22,11 +22,11 @@ public class commandProductsListBean {
         this.command = command;
     }
 
-    public List<ProductBean> getProductList() {
+    public List<ProductQuantityBean> getProductList() {
         return productList;
     }
 
-    public void setProductList(List<ProductBean> productList) {
+    public void setProductList(List<ProductQuantityBean> productList) {
         this.productList = productList;
     }
 }

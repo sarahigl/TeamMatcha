@@ -19,6 +19,12 @@ public class ProductBean {
         this.image_produit = image_produit;
     }
 
+    public ProductBean(double prix_produit, String nomProduit, String image_produit) {
+        this.prix_produit = prix_produit;
+        this.nomProduit = nomProduit;
+        this.image_produit = image_produit;
+    }
+
     public ProductBean() {
     }
 

@@ -24,6 +24,12 @@ public class CommandBean {
         this.date_commande = date_commande;
     }
 
+    public CommandBean(String telephone_commande, String nom_commande, String prenom_commande) {
+        this.telephone_commande = telephone_commande;
+        this.nom_commande = nom_commande;
+        this.prenom_commande = prenom_commande;
+    }
+
     public CommandBean() {
     }
 

@@ -30,9 +30,9 @@
         <ul>
             <li th:each="product : ${products}">
                 <p th:text="${product.getId_produit()}" ></p>
+                <img th:src="@{${product.getImage_produit()}}" class="product-image">
                 <p th:text="${product.getNomProduit()}" class="nomproduit"></p>
                 <p th:text="${product.getPrix_produit() + '€'}"></p>
-                <p th:text="${product.getImage_produit()}"></p>
                 <a th:href="@{'/deleteProduct/' + ${product.getId_produit()}}" class="lien">Supprimer</a>
             </li>
         </ul>

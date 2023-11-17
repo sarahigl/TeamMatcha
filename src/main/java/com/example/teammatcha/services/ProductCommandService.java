@@ -43,10 +43,22 @@ public class ProductCommandService {
         long timestamp = now.toEpochMilli();
         command.setDate_commande(timestamp);
         CommandBean savedCommand = commandRep.save(command);
-//        for (int i = 0; i < productCommand.size(); i++) {
-//            productCommand.get(i).getCommande().setId_commande(savedCommand.getId_commande());
-//            productCommandRep.save(productCommand.get(i));
-//        }
+    }
+    public void addCommand2(commandProductsListBean commandProduct) {
+        Instant now = Instant.now();
+        long timestamp = now.toEpochMilli();
+        CommandBean command = commandProduct.getCommand();
+        command.setDate_commande(timestamp);
+        CommandBean savedCommand = commandRep.save(command);
+        int idCommand = command.getId_commande();
+        for (int i = 0; i < commandProduct.getProductList().size(); i++) {
+            ProductQuantityBean product = commandProduct.getProductList().get(i);
+            ProductCommandBean productCommand = new ProductCommandBean();
+            productCommand.setIdCommande(idCommand);
+            productCommand.setIdProduit(product.getProduct().getId_produit());
+            productCommand.setQuantite(product.getQuantity());
+            productCommandRep.save(productCommand);
+        }
     }
     public ProductBean getProductById(int productId) {
         return productRep.findById(productId);
@@ -54,21 +66,20 @@ public class ProductCommandService {
     public List<commandProductsListBean> getAllMergedData() {
         List<commandProductsListBean> mergedData = new ArrayList<>();
         List<CommandBean> allCommands = getAllCommand();
+
         for (CommandBean command : allCommands) {
-            List<ProductBean> productsList = new ArrayList<>();
+            List<ProductQuantityBean> productsList = new ArrayList<>();
+
             for (ProductCommandBean productCommand : getAllProductCommand()) {
-                if (productCommand.getCommande().getId_commande() == command.getId_commande()) {
-                    ProductBean product = getProductById(productCommand.getProduit().getId_produit());
-                    productsList.add(product);
+                if (productCommand.getIdCommande() == command.getId_commande()) {
+                    ProductBean product = getProductById(productCommand.getIdProduit());
+                    productsList.add(new ProductQuantityBean(product, productCommand.getQuantite()));
                 }
             }
+
             mergedData.add(new commandProductsListBean(command, productsList));
         }
+
         return mergedData;
     }
-
-
-
-
-
 }

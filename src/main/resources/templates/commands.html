@@ -7,26 +7,55 @@
 </head>
 <body>
     <header>
-        <a href="commands">Commandes</a>
-        <a href="products">Produits</a>
+        <h1 class="fruitshop">FruitShop</h1>
+        <div class="navigation-container">
+            <a href="commands" class="navigation">Commandes</a>
+            <a href="products" class="navigation">Produits</a>
+        </div>
     </header>
 
-    <ul>
-        <li th:each="command : ${commands}">
-            <p th:text="${command.getCommand().getId_commande()}"></p>
-            <p th:text="${command.command.getDate_commande()}"></p>
-            <p th:text="${command.command.getNom_commande()}"></p>
-            <p th:text="${command.command.getPrenom_commande()}"></p>
-            <p th:text="${command.command.getTelephone_commande()}"></p>
-            <p th:text="${command.command.getPrix_total_commande()}"></p>
-            <ul>
-                <li th:each="productCommand : ${command.getProductList()}">
-                    <p th:text="${productCommand.getNomProduit()}"></p>
-                    <p th:text="${productCommand.getPrix_produit()}"></p>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div th:each="command : ${commands}" class="command-table">
+        <h2 th:text="'Commande ID ' + ${command.getCommand().getId_commande()}"></h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Téléphone</th>
+                <th>Prix Total (€)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="${#dates.format(new java.util.Date(command.command.getDate_commande()), 'dd-MM-yyyy HH:mm:ss')}"></td>
+                <td th:text="${command.command.getNom_commande()}"></td>
+                <td th:text="${command.command.getPrenom_commande()}"></td>
+                <td th:text="${command.command.getTelephone_commande()}"></td>
+                <td th:text="${command.command.getPrix_total_commande()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix Unitaire (€)</th>
+                <th>Quantité</th>
+                <th>Total (€)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="productCommand : ${command.getProductList()}">
+                <td th:text="${productCommand.getProduct().getNomProduit()}"></td>
+                <td th:text="${productCommand.getProduct().getPrix_produit()}"></td>
+                <td th:text="${productCommand.getQuantity()}"></td>
+                <td th:text="${productCommand.getProduct().getPrix_produit() * productCommand.getQuantity()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 
 
